@@ -1,0 +1,28 @@
+- About section
+    - What is the purpose/goal of the project?
+	The IPL is an annual cricket tournament based in India that attracts the best players from around the world, and is famed for its popularity in cricketing nations, as well as its lucrative business models that has caused companies like Amazon, Netflix, and Disney to fight for broadcast rights. Each team fields 11 players in any one game, with a limit of 4 allowed foreign players. As such, teams are constantly experimenting with team lineups in order to find the best possible combination, and determing the most valuable players is of utmost importance.
+
+	This project will aim to build a model that predicts the number of runs that any one player will score against any one bowler in a season using historical data from 2008 to the most recently completed season in 2021.
+	
+    - What are some key characteristics of the data?
+	The data, sourced through publicly available datasets on Kaggle, contains multiple CSVs of varying information for the 2008-2021 IPL seasons. For our particular project, we are interested in three – the total batting & bowling cards for every single match, as well as total match summaries. We'll combine and pivot these to extract worthwhile features. 
+	
+- Exploration section
+    - Correlation table of data
+    - Scatterplots of trends
+    - Any plots that will help the user understand the data that you are using
+- Machine Learning
+    - Which models did you use? Is the task classification or regression?
+    - What are the results of the model?
+        - Mean absolute error
+        - Confusion matrix
+        - Accuracy score
+- Conclusion
+    - Which is the “best” model according to the metrics used?
+    - So what? What will the project be used for in the future? What real world problem did you solve?
+        - Remember: every data science problem tackled must solve some real world problem or at least gain insights that the creators/users didn’t originally know.
+- Team
+    - Who was on your team and what were their roles in the project? What did each individual member contribute?
+        - Who is the project manager? Who is the Instructor?
+        - Who is the backend developer? Frontend? Machine Learning Engineer?
+        - Who is the designer?

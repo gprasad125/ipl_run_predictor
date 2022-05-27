@@ -1,0 +1,60 @@
+[Action Item 1]
+The IPL is an annual cricket tournament based in India that attracts the best players from around the world, and is famed for its popularity in cricketing nations, as well as its lucrative business models that has caused companies like Amazon, Netflix, and Disney to fight for broadcast rights. Each team fields 11 players in any one game, with a limit of 4 allowed foreign players (read: non-Indian). As such, teams are constantly experimenting with team lineups in order to find the best possible combination, and determing the most valuable players is of utmost importance. 
+
+This project will aim to build a model that predicts the number of runs or number of wickets taken that any player will achieve in a season using historical data from 2008 to the most recently completed season in 2021. The primary data source can be found here (https://www.kaggle.com/datasets/rajsengo/indian-premier-league-ipl-all-seasons).
+
+Avenues I want to pursue are regression (do players score more / take more wickets based on increases in other features?), clustering (are there certain "kinds" of players who score a certain amount of runs / take a certain amount of wickets), and I know others will crop up as I pursue this project. 
+
+Possible advanced features could be:
+- input a fake player's stats and the model could output a season that they would perform the best in
+- generate a "Best XI" team from each season
+- generate team XIs and see if game outcomes might have differed
+- The current 2022 IPL season is currently ongoing, so can we predict a possible winning team? 
+
+For this model, the MVP would be a model that predicts with high accuracy a desired variable (runs, wickets, etc.) and is able to take in input variables to generate predictive outcomes (structuring a model to take in statistics and use the best avenue to generate result values.)
+
+-----------------
+
+[Action Item 2]
+I have added Mitch Cutts & Alex Duffy to my project hub on the coalc environment.
+
+-----------------
+
+[Action Item 3]
+I am in progress on finalizing visualizations for the EDA section. 
+
+-----------------
+
+[Action Item 4]
+The 3 models I plan to use are: 
+1) Linear Regression
+-> In my EDA of the dataset, I found that a total "runs" attribute for the batsmen (for a feature engineered version of the data) had slight correlations with a few intriguing variables (like ball count, number of wickets taken on average by the other bowler, etc.) and I wanted to build a model to see if these had a useful correlation. Linear Regression would be the correct model to pick, because we are dealing with a linearly dependent y-variable with several independent x-variables, where y is a linear combination of x.
+
+2) Decision Tree Regressor
+-> A Decision Tree Regressor is an interesting option here, because in the event that there is not a linear relationship between target & training features, it would be difficult to consider what other kinds of relationship there could be. A Decision Tree, in general, splits each observation into "child" nodes that reflect some feature of the observation, and does this until we reach the desired target variable. I think this model would be interesting to pursue because the data contains many categorical features (stadium, city played in, team played for / against, etc.) and a DTR would allow us to see the relationship between each observation's possible values and our target variable. 
+
+3) Support Vector Regression
+-> Similar to linear regression, the SVM model attempts to predict an outcome variable off of a pattern with feature variables; however, the SVR option has more flexibility in the situation where the correlation is not clear. Firstly, SVRs have the ability to handle non-linear cases, as well as set a margin of acceptable deviation for the predictive function f(x) from the actual value y. I believe this will be a good option to explore, because while some variables do seem linearly correlated with target variables in the data, I want to explore the option that others might be related, but not in a direct linear fashion.
+
+-----------------
+
+[Action Item 5]
+For my metrics, I will be using the R2 base `.score()` function that each model in sklearn contains, as well as mean squared error. I believe these will give me a full overview of the robustness of each model, and will be more useful combined, rather than just in isolation – a low R2 score does not necessarily make a bad model. Furthermore, I will be checking how these change before and after model parameter tuning via GridSearchCV, and will make a DataFrame visualization showing the comparisons. 
+
+I believe these particular metrics are useful for my topic & model, because I am dealing with a regression problem. I am attempting to predict a numerical y quantity off of several linearly independent x variables, and so metrics like r2 and msq will be a good way to understand how capable each of the three models are. I am also going to talk in the conclusion about metrics I would like to use if I could take this project further (accuracy, f1 scores if I could make this a classification problem rather than regression, for example).
+
+-----------------
+
+[Action Item 6]
+As mentioned before, the three regression models I used were Linear Regression, Decision Tree Regression, and Support Vector Regression. Originally, I ran each raw model on the data, and calculated their respective r2 and MSE scores. Then, I optimized each model with a set of parameter possibilities through GridSearchCV, and got the updated scores. 
+
+For linear regression, there was no difference between the pre-optimized and post-optimized model's performance w.r.t r2 and MSE. For the r2 score, the model returned ~ 0.57, reflecting that 57% of the variance seen in the runs scored by any one batsman against any one bowler can be explained by the data found in the "x" features. For the MSE, the model returned ~ 14.85, meaning that the typical squared distance between our linear regression model's predictions and the actual runs scored was about 15 runs. 
+
+For decision tree, optimizing the model with parameter-tuning saw a huge jump in the model's performance . The original r2 value was ~ 0.19 and optimized became ~ 0.58, while the original MSE was ~ 28.04, and optimized became 14.7. Optimizing the decision tree ensured that our model became more accurately fitted to our data. 
+
+For support vector regression, I did not see major changes between the pre-optimized & post-optimized model for SVR. The r2 values clustered around ~0.56, while the MSEs clustered around 15 runs, so very similar to the prior models. Optimizing my SVR model through GridSearchCV proved unsustainable for the time period (for example, modifying certain parameters induced a training time of 2 hours for just one run in the scope of 120 total runs). I plan to discuss this in the conclusion within the "Possible Extensions" portion. 
+
+As we can see, all three models ended up with similar results, reflecting the ability of models to generate similar predictions. The r2 doesn't point to an extremely high correlation, which makes for further conclusions done with regard to predicting match results and individual performances.
+
+-----------------
+
