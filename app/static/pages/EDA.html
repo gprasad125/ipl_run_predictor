@@ -9,7 +9,8 @@
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href= "{{ url_for('static', filename='assets/favicon.ico') }}"/>
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet" />
+        <link href= "css/styles.css" rel="stylesheet" />
+        <!-- "{{ url_for('static', filename='css/styles.css') }}" -->
 
     </head>
     <body>
@@ -18,12 +19,8 @@
             <div class="border-end bg-white" id="sidebar-wrapper">
                 <!-- <div class="sidebar-heading border-bottom bg-light">Start Bootstrap</div> -->
                 <div class="list-group list-group-flush">
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3"
-                    href="{{ url_for('static', filename='pages/EDA.html') }}">EDA</a>
-
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3"
-                    href="{{ url_for('static', filename='pages/modeling.html') }}">Modeling</a>
-
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="../templates/index.html">Project Goals</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Modeling</a>
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Results</a>
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">About</a>
                 </div>
@@ -56,31 +53,29 @@
                 <div class="container-fluid">
                     <h1 class="mt-4">2022 Summer AI Camp Crash Course Project</h1>
                     <br>
-                    <h3> Project Background & Goals </h3>
+                    <h3> Dataset Exploration </h3>
+                    <br>
                     <p>
 
-                      The Indian Premier League (IPL) is an annual cricket tournament based in India that attracts the best players from around the world, and is famed for its popularity in cricketing nations, as well as its lucrative business models that has caused companies like Amazon, Netflix, and Disney to fight for broadcast rights. Each team fields 11 players in any one game, with a limit of 4 allowed foreign players. As such, teams are constantly experimenting with team lineups in order to find the best possible combination, and determing the most valuable players is of utmost importance.
-
-                    	This project will aim to build a model that predicts the number of runs that any one player will score against any one bowler in a season using historical data from 2008 to the most recently completed season in 2021.
+                        The data was chunked into three parts of particular interest. 
 
                     </p>
 
-                    <h3> Dataset Description </h3>
+                    <h3> Feature Creation </h3>
                     <p>
 
-                      The data was sourced through <a href = "https://www.kaggle.com/datasets/rajsengo/indian-premier-league-ipl-all-seasons"> publicly available data shared on Kaggle. </a>
-                      It contained batting, bowling, and overall-season statistics for every player who played at least once between 2008 and 2021. Furthermore, it also had incomplete 2022 statistics for the ongoing 2022 season.
 
-                      The data required little cleaning, but did necessitate intensive feature selection and shaping for usage in our modeling.
 
                     </p>
 
-                    <h3> Acknowledgements </h3>
+                    <h3> Correlation Visualization </h3>
                     <p>
 
-                      Special thanks to <a href = "https://github.com/sengorajkumar"> Rajkumar Sengottuvel </a> for collecting & uploading the data onto Kaggle.
+
 
                     </p>
+
+
                 </div>
             </div>
         </div>
