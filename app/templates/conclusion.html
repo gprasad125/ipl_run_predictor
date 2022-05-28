@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Conclusion</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href= "{{ url_for('static', filename='assets/favicon.ico') }}"/>
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet" />
+
+    </head>
+    <body>
+        <div class="d-flex" id="wrapper">
+            <!-- Sidebar-->
+            <div class="border-end bg-white" id="sidebar-wrapper">
+                <div class="list-group list-group-flush">
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="goals">Project Goals</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="EDA">EDA</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="modeling">Modeling</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="about">About</a>
+                </div>
+            </div>
+            <!-- Page content wrapper-->
+            <div id="page-content-wrapper">
+                <!-- Top navigation-->
+                <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+
+                </nav>
+                <!-- Page content-->
+                <div class="container-fluid">
+
+                  <h1 class="mt-4">Conclusion</h1>
+                  <h3>Importance</h3>
+                  <p>
+
+                    The project conducted here has implications regarding team composition analysis for IPL teams going forward.
+                    The best teams have historically been those to find their footing and best playing XI earlier into the tournament, and undoubtedly, part of that is choosing favorable matchups between batsmen and bowlers.
+
+                  </p>
+
+                  <h3>Future Analysis</h3>
+
+                  <p>
+
+                    Unfortunately, I did not get to pursue as much of the paths this project could go as I would like.
+                    A few of the areas I would like to take this would be:
+                    <ul>
+
+                      <li> Changing this to a classification problem </li>
+                        <ul>
+                          <li> Define new "classes" of players </li>
+                          <li> New metrics like F1 score, accuracy, etc.</li>
+                        </ul>
+
+                      <li> Predict match results by change in extraneous variables </li>
+                        <ul>
+                          <li> Would a match won in 2014 be won in 2007? </li>
+                          <li> How would the 2020 season have turned out if it was played in a different country?  </li>
+                        </ul>
+
+                      <li> Application to non-IPL data </li>
+                        <ul>
+                          <li> Obtain data on international matches / other formats </li>
+                          <li> Do these have the same patterns as IPL matches?  </li>
+                        </ul>
+
+                    </ul>
+
+                  </p>
+
+                </div>
+            </div>
+        </div>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>

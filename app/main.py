@@ -14,7 +14,7 @@ else:
     app = Flask(__name__, static_url_path=base_url+'static')
 
 # set up the routes and logic for the webserver
-@app.route(f'{base_url}')
+@app.route(f'{base_url}/goals')
 def home():
     return render_template('index.html')
 
@@ -23,6 +23,22 @@ def home():
 # @app.route(f'{base_url}/team_members')
 # def team_members():
 #     return render_template('team_members.html') # would need to actually make this page
+
+@app.route(f'{base_url}/EDA')
+def EDA():
+    return render_template('EDA.html')
+
+@app.route(f'{base_url}/modeling')
+def model():
+    return render_template('modeling.html')
+
+@app.route(f'{base_url}/conclusion')
+def concluion():
+    return render_template('conclusion.html')
+
+@app.route(f'{base_url}/about')
+def about():
+    return render_template('about.html')
 
 
 if __name__ == '__main__':

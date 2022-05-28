@@ -9,18 +9,18 @@
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href= "{{ url_for('static', filename='assets/favicon.ico') }}"/>
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href= "../CSS/styles.css" rel="stylesheet" />
+        <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet" />
 
     </head>
     <body>
         <div class="d-flex" id="wrapper">
             <!-- Sidebar-->
-            <div class="border-end bg-white" id="sidebar-wrapper">  
+            <div class="border-end bg-white" id="sidebar-wrapper">
                 <div class="list-group list-group-flush">
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="../../templates/index.html">Project Goals</a>
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="EDA.html">EDA</a>
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Conclusion</a>
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">About</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="goals">Project Goals</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="EDA">EDA</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="conclusion">Conclusion</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="about">About</a>
                 </div>
             </div>
             <!-- Page content wrapper-->
@@ -111,40 +111,44 @@
                   </p>
 
                   <h3> Modeling Results </h3>
-                  <table cellpadding="pixels"cellspacing="pixels">
+                  <table style = "border: 1px solid">
                   <tr>
-                     <th>Model</th>
-                     <th>Base r<sup>2</sup></th>
-                     <th>Base MSE</th>
-                     <th>Optimized r<sup>2</sup></th>
-                     <th>Optimized MSE</th>
+                     <th style = "border: 1px solid">Model</th>
+                     <th style = "border: 1px solid">Base R<sup>2</sup></th>
+                     <th style = "border: 1px solid">Base MSE</th>
+                     <th style = "border: 1px solid">Optimized R<sup>2</sup></th>
+                     <th style = "border: 1px solid">Optimized MSE</th>
                   </tr>
                   <tr>
-                     <td align="position"valign="position">LR</td>
-                     <td align="position"valign="position">0.57</td>
-                     <td align="position"valign="position">14.85</td>
-                     <td align="position"valign="position">0.57</td>
-                     <td align="position"valign="position">14.74</td>
+                     <td style = "border: 1px solid">LR</td>
+                     <td style = "border: 1px solid">0.57</td>
+                     <td style = "border: 1px solid">14.85</td>
+                     <td style = "border: 1px solid">0.57</td>
+                     <td style = "border: 1px solid">14.74</td>
                   </tr>
                   <tr>
-                    <td>DTR</td>
-                    <td>0.19</td>
-                    <td>28.04</td>
-                    <td>0.58</td>
-                    <td>14.70</td>
+                    <td style = "border: 1px solid">DTR</td>
+                    <td style = "border: 1px solid">0.19</td>
+                    <td style = "border: 1px solid">28.04</td>
+                    <td style = "border: 1px solid">0.58</td>
+                    <td style = "border: 1px solid">14.70</td>
                   </tr>
                   <tr>
-                    <td>SVR</td>
-                    <td>0.56</td>
-                    <td>15.04</td>
-                    <td>0.56</td>
-                    <td>14.93</td>
+                    <td style = "border: 1px solid">SVR</td>
+                    <td style = "border: 1px solid">0.56</td>
+                    <td style = "border: 1px solid">15.04</td>
+                    <td style = "border: 1px solid">0.56</td>
+                    <td style = "border: 1px solid">14.93</td>
                   </tr>
                   </table>
                   <br>
                   <p>
 
-                    As we can see, for linear regression and support vector regression, optimizing had little impact on improving the performance of the model by either metric. Decision tree benefited heavily from parameter tuning, but the end result for both r<sup>2</sup> and MSE came close to the values for both linear regression and SVRs.
+                    As we can see, for linear regression and support vector regression, optimizing had little impact on improving the performance of the model by either metric. Decision tree benefited heavily from parameter tuning, but the end result for both R<sup>2</sup> and MSE came close to the values for both linear regression and SVRs.
+                    <br><br>
+
+                    Despite the three separate efforts, no one model came out as the clear best option. Furthermore, the R<sup>2</sup> values for all three models clustered around 57%, pointing to a moderate relation between our feature and target variables.
+
 
                   </p>
 
