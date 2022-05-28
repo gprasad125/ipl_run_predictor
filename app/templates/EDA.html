@@ -120,11 +120,34 @@
 
                       <h4> Scatterplots </h4>
                       <p>
-                        TO BE ADDED
+                        
+                        Going forward, I wanted to see what visual relations existed between any of the variables and the target "runs" variable. Here, I chose a couple common metrics used to assess the quality of a batsman in IPL cricket:
+                        <ol>
+                          <li>The number of balls faced by the batsman</li>
+                          <li>The strike rate, or how quickly they score</li>
+                            <ul>
+                               <li> Calculated as Runs / Balls Faced</li>
+                            </ul>
+                          <li>The number of sixes hit</li>
+                        </ol>
+  
+                       I plotted these variables out individually versus the "total_runs" attribute to see what patterns existed between these features and a batsman's performance. 
+                        
                       </p>
+                      
+                      <h5>1. Runs versus Balls Faced</h5>
+                      <p></p>
+                      <iframe width="400" height="400"
+                        src="{{ url_for('static', filename = 'html/runs_vs_ball.html') }}"></iframe>
 
-                      <!-- <iframe width="450" height="450"
-                        src="{{ url_for('static', filename = 'html/scatter.html') }}"></iframe> -->
+                      <h5>2. Runs versus Average Strike Rate</h5>
+                      <iframe width="400" height="400"
+                        src="{{ url_for('static', filename = 'html/runs_vs_sr.html') }}"></iframe>
+
+                      <h5>3. Runs versus Average Sixes Hit</h5>
+                      <iframe width="400" height="400"
+                        src="{{ url_for('static', filename = 'html/runs_vs_six.html') }}"></iframe>
+ 
 
                       <h4> Correlation Table of Features</h4>
                       <p>
