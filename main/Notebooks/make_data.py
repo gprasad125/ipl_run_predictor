@@ -49,6 +49,7 @@ def make_data(bat, bowl, full):
     
     df = pd.merge(versus_df, overall_batsman, left_on = "batsman1_name", right_on = "batsman_name")
     df = pd.merge(df, overall_bowler, left_on = "bowler1_name", right_on = "bowler_name")
+    df = df.replace({"KXIP":"PBKS"})
     df = df.drop_duplicates()
     
     return df

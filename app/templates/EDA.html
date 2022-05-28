@@ -95,6 +95,47 @@
 
                     <h3> Correlation Visualization </h3>
                     <p>
+                      <h4> Runs Scored For and Against Each Team </h4>
+                      <p>
+
+                        Firstly, I started off with a simple bar chart that compared, for each team, the amount of total runs they had scored and conceded in the 2008-21 IPL seasons.
+                        <br>
+                        We can see in this visualization there are visible differences between team performance in terms of total runs scored and conceded.
+                        <br>
+                        For example, CSK has scored 32.5k runs, yet only conceded 25k, asking the question of whether playing a certain team impacts a player's batting performance?
+                      </p>
+                      <iframe width="600" height="450"
+                        src="{{ url_for('static', filename = 'html/grouped.html') }}"></iframe>
+                      <br>
+
+                      <h4> Difference in Average Runs Scored by Venue </h4>
+                      <p>
+
+                        Next, I charted the difference between total runs scored in each of the top 10 most played-in venues to the average amount of runs scored. We can see significant disparities between different stadiums, adding another possible factor in affecting a batsman's performance.
+
+                      </p>
+                      <iframe width="700" height="600"
+                        src="{{ url_for('static', filename = 'html/runsbyvenue.html') }}"></iframe>
+                      <br>
+
+                      <h4> Scatterplots </h4>
+                      <p>
+                        TO BE ADDED
+                      </p>
+
+                      <!-- <iframe width="450" height="450"
+                        src="{{ url_for('static', filename = 'html/scatter.html') }}"></iframe> -->
+
+                      <h4> Correlation Table of Features</h4>
+                      <p>
+                        After exploring a few possible variables, I wanted to generate a correlative heatmap that showed how related different features were to the "runs" variable. I took the top five most related features, and generated the following heatmap. As we can see, the relations are not particularly strong with respect to our desired target variable, centering just above 20%.
+
+                        <br>
+
+                        Of particular interest was the weak relation between a batsman's average runs and the runs they score against one bowler. We would expect this relationship to be much stronger, indicating that the sport's usage of the metric might be slightly overblown as a genuine indication of a player's quality.
+                      </p>
+                      <iframe width="450" height="450"
+                      	src="{{ url_for('static', filename = 'html/heatmap.html') }}"></iframe>
 
 
 
@@ -103,7 +144,9 @@
                     <h3> Feature Creation </h3>
                     <p>
 
-                      In order to create our feature dataset,
+                      The fourth visualization I created – the correlative heatmap – was based off of a reshaped dataset that combined the three prior datasets. I grouped the batting / bowling statistics to find each batsman and bowler's total and typical performances in metrics like runs scored, wickets taken, etc. Next, I pivoted the overall ball-by-ball data to find how each batsman performed vs each bowler in every unique match, and combined this to get a full dataset containing match and overall information for players in one dataset.
+
+
 
 
                     </p>

@@ -14,8 +14,12 @@ else:
     app = Flask(__name__, static_url_path=base_url+'static')
 
 # set up the routes and logic for the webserver
-@app.route(f'{base_url}/index')
+@app.route(f'{base_url}/')
 def home():
+    return render_template('index.html')
+
+@app.route(f'{base_url}/index')
+def home2():
     return render_template('index.html')
 
 # define additional routes here

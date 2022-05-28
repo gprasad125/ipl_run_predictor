@@ -477,6 +477,8 @@ output {
 
 iframe {
   border: 0;
+  display: block;
+  align: center;
 }
 
 summary {
