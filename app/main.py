@@ -14,7 +14,7 @@ else:
     app = Flask(__name__, static_url_path=base_url+'static')
 
 # set up the routes and logic for the webserver
-@app.route(f'{base_url}/goals')
+@app.route(f'{base_url}/index')
 def home():
     return render_template('index.html')
 
