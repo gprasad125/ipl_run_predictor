@@ -5,12 +5,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Simple Sidebar - Start Bootstrap Template</title>
+        <title>EDA</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href= "{{ url_for('static', filename='assets/favicon.ico') }}"/>
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href= "css/styles.css" rel="stylesheet" />
-        <!-- "{{ url_for('static', filename='css/styles.css') }}" -->
+        <link href= "../CSS/styles.css" rel="stylesheet" />
 
     </head>
     <body>
@@ -19,9 +18,9 @@
             <div class="border-end bg-white" id="sidebar-wrapper">
                 <!-- <div class="sidebar-heading border-bottom bg-light">Start Bootstrap</div> -->
                 <div class="list-group list-group-flush">
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="../templates/index.html">Project Goals</a>
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Modeling</a>
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Results</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="../../templates/index.html">Project Goals</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="modeling.html">Modeling</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Conclusion</a>
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">About</a>
                 </div>
             </div>
@@ -51,26 +50,75 @@
                 </nav>
                 <!-- Page content-->
                 <div class="container-fluid">
-                    <h1 class="mt-4">2022 Summer AI Camp Crash Course Project</h1>
+                    <h1 class="mt-4">Exploratory Data Analysis</h1>
                     <br>
                     <h3> Dataset Exploration </h3>
-                    <br>
                     <p>
 
-                        The data was chunked into three parts of particular interest. 
+                        The data was chunked into three parts of particular interest.
+                        <ul>
+                          <li>Batting Statistics</li>
+                          <li>Bowling Statistics</li>
+                          <li>Overall Season Statistics</li>
+                        </ul>
 
-                    </p>
+                        More data was given, but these three were selected for use in feature creation & modeling.
 
-                    <h3> Feature Creation </h3>
-                    <p>
+                        <br>
+                        <br>
+                        <h4>1. Batting Statistics</h4>
+                        <p> The batting statistics CSV contained information about every single batsman's performance in every match from 2008 - 2021, containing statistics like:
+                          <ul>
 
+                            <li> the team batting </li>
+                            <li> current batsman's name </li>
+                            <li> runs scored </li>
+                            <li> total team score at the time of the batsman's dismissal </li>
 
+                          </ul>
+
+                        </p>
+
+                        <h4>2. Bowling Statistics</h4>
+                        <p> The bowling statistics CSV contained information about every single bowler's performance in every match from 2008 - 2021, containing statistics like:
+
+                          <ul>
+
+                            <li> the team bowling </li>
+                            <li> current bowler's's name </li>
+                            <li> wickets taken in the match </li>
+                            <li> runs conceded to the opposition </li>
+
+                          </ul>
+
+                        </p>
+
+                        <h4>3. Overall Statistics</h4>
+                        <p> The bowling statistics CSV contained ball-by-ball data for every match from 2008 - 2021. This dataset would provide the base for our modeling. It contains statistics like:
+
+                          <ul>
+
+                            <li> the time the ball was delivered in game </li>
+                            <li> whether the ball was illegal or not </li>
+                            <li> runs scored off the ball </li>
+
+                          </ul>
+
+                        </p>
 
                     </p>
 
                     <h3> Correlation Visualization </h3>
                     <p>
 
+
+
+                    </p>
+
+                    <h3> Feature Creation </h3>
+                    <p>
+
+                      In order to create our feature dataset,
 
 
                     </p>

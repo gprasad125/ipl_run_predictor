@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Modeling</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href= "{{ url_for('static', filename='assets/favicon.ico') }}"/>
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href= "../CSS/styles.css" rel="stylesheet" />
+
+    </head>
+    <body>
+        <div class="d-flex" id="wrapper">
+            <!-- Sidebar-->
+            <div class="border-end bg-white" id="sidebar-wrapper">  
+                <div class="list-group list-group-flush">
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="../../templates/index.html">Project Goals</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="EDA.html">EDA</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Conclusion</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">About</a>
+                </div>
+            </div>
+            <!-- Page content wrapper-->
+            <div id="page-content-wrapper">
+                <!-- Top navigation-->
+                <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+
+                </nav>
+                <!-- Page content-->
+                <div class="container-fluid">
+                    <h1 class="mt-4">Modeling</h1>
+                    <br>
+                    <h3> Task Discussion </h3>
+                    <p>
+
+                      The task is to predict the number of runs a batsman will score against any one bowler, based off of several features. However, our y-variable isn't a class, so this would be a regression problem.
+
+                      As such, our models would need to be fitted for regression, and we would need to select appropriate metrics.
+
+                    </p>
+
+                    <h3> Model Selection </h3>
+                    <p>
+
+                      <ol>
+                        <h5><li>Linear Regression</li></h5>
+                        <p>
+
+                          In the EDA of the dataset, we found that a total "runs" attribute for the batsmen (for a feature engineered version of the data) had slight correlations with a few intriguing variables (like ball count, number of wickets taken on average by the other bowler, etc.). So we can build a model to see if these had a useful correlation. Linear Regression would be one correct model to pick, because we are dealing with a linearly dependent y-variable with several independent x-variables, where y is a linear combination of x.
+
+                        </p>
+
+                        <h5><li>Decision Tree Regression</li></h5>
+                        <p>
+                          A Decision Tree Regressor is an interesting option here, because in the event that there is not a linear relationship between target & training features, it would be difficult to consider what other kinds of relationship there could be. A Decision Tree, in general, splits each observation into "child" nodes that reflect some feature of the observation, and does this until we reach the desired target variable. I think this model would be interesting to pursue because the data contains many categorical features (stadium, city played in, team played for / against, etc.) and a DTR would allow us to see the relationship between each observation's possible values and our target variable.
+                        </p>
+
+                        <h5><li>Support Vector Regression</li></h5>
+                        <p>
+                          Similar to linear regression, the SVM model attempts to predict an outcome variable off of a pattern with feature variables; however, the SVR option has more flexibility in the situation where the correlation is not clear. Firstly, SVRs have the ability to handle non-linear cases, as well as set a margin of acceptable deviation for the predictive function f(x) from the actual value y. I believe this will be a good option to explore, because while some variables do seem linearly correlated with target variables in the data, I want to explore the option that others might be related, but not in a direct linear fashion.
+                        </p>
+
+                      </ol>
+                    </p>
+
+                    <h3> Metric Selection </h3>
+                    <p>
+                      <ol>
+                        <h5><li> R<sup>2</sup></li></h5>
+                        <p>
+
+                          The first metric we'll want to use is the R<sup>2</sup>, or coefficient of determination.
+                          This value determines the proportion of the variance in the target data that can be attributed to the feature variables. It is measured between [0, 1] where 1 is the best score possible.
+
+                          The R<sup>2</sup> metric tells us how correlated the feature variables are in determining the values of the "runs" variable.
+
+                        </p>
+
+                        <h5><li> Mean Squared Error </li></h5>
+                        <p>
+
+                          The second metric we'll want to use is the mean squared error of the data.
+                          After predicting values from each of our models, this metric will tell us the average squared difference (in terms of "runs") between our predicitions and the true values. As such, values that tend to be lower will be better.
+
+                          The MSE tells us how strong our model is in predicting our target variable.
+
+                        </p>
+
+                      </ol>
+
+                      Independently, these metrics, while valuable, only give half of the true strength of our models. However, together, we get a full picture of how good each model is in terms of taking our x-variables and finding the relation to the y-variable.
+
+                    </p>
+
+                  <h3> Preprocessing & Modeling </h3>
+                  <p>
+
+                    I split the data into training and testing along an 70/30 split.
+                    <br>
+                    This yielded a training set of 29,920 observations, and a test set of 12,824 observations.
+                    <br><br>
+                    For preprocessing, I made use of one-hot encoding for categorical variables (ex: venue, team names, etc.) and standard scaling for numerical variables (ex: average runs, total wickets taken, etc.)
+
+                    Preprocessing was conducted through sklearn's ColumnTransformer and Pipeline modules, which I fitted and transformed on the train set before transforming the test set.
+
+                    Finally, each model was fit, trained, and tested, and then optimized through GridSearchCV, and refit, retrained, and retested.
+
+                  </p>
+
+                  <h3> Modeling Results </h3>
+                  <table cellpadding="pixels"cellspacing="pixels">
+                  <tr>
+                     <th>Model</th>
+                     <th>Base r<sup>2</sup></th>
+                     <th>Base MSE</th>
+                     <th>Optimized r<sup>2</sup></th>
+                     <th>Optimized MSE</th>
+                  </tr>
+                  <tr>
+                     <td align="position"valign="position">LR</td>
+                     <td align="position"valign="position">0.57</td>
+                     <td align="position"valign="position">14.85</td>
+                     <td align="position"valign="position">0.57</td>
+                     <td align="position"valign="position">14.74</td>
+                  </tr>
+                  <tr>
+                    <td>DTR</td>
+                    <td>0.19</td>
+                    <td>28.04</td>
+                    <td>0.58</td>
+                    <td>14.70</td>
+                  </tr>
+                  <tr>
+                    <td>SVR</td>
+                    <td>0.56</td>
+                    <td>15.04</td>
+                    <td>0.56</td>
+                    <td>14.93</td>
+                  </tr>
+                  </table>
+                  <br>
+                  <p>
+
+                    As we can see, for linear regression and support vector regression, optimizing had little impact on improving the performance of the model by either metric. Decision tree benefited heavily from parameter tuning, but the end result for both r<sup>2</sup> and MSE came close to the values for both linear regression and SVRs.
+
+                  </p>
+
+                </div>
+            </div>
+        </div>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>

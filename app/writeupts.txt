@@ -1,12 +1,10 @@
 - About section
     - What is the purpose/goal of the project?
-	The IPL is an annual cricket tournament based in India that attracts the best players from around the world, and is famed for its popularity in cricketing nations, as well as its lucrative business models that has caused companies like Amazon, Netflix, and Disney to fight for broadcast rights. Each team fields 11 players in any one game, with a limit of 4 allowed foreign players. As such, teams are constantly experimenting with team lineups in order to find the best possible combination, and determing the most valuable players is of utmost importance.
+	
 
-	This project will aim to build a model that predicts the number of runs that any one player will score against any one bowler in a season using historical data from 2008 to the most recently completed season in 2021.
-	
     - What are some key characteristics of the data?
-	The data, sourced through publicly available datasets on Kaggle, contains multiple CSVs of varying information for the 2008-2021 IPL seasons. For our particular project, we are interested in three – the total batting & bowling cards for every single match, as well as total match summaries. We'll combine and pivot these to extract worthwhile features. 
-	
+	The data, sourced through publicly available datasets on Kaggle, contains multiple CSVs of varying information for the 2008-2021 IPL seasons. For our particular project, we are interested in three – the total batting & bowling cards for every single match, as well as total match summaries. We'll combine and pivot these to extract worthwhile features.
+
 - Exploration section
     - Correlation table of data
     - Scatterplots of trends

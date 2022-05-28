@@ -303,7 +303,7 @@ svg {
 }
 
 .page-image{
-  margin: 30; 
+  margin: 30;
 }
 
 table {
@@ -11305,4 +11305,8 @@ header {
 section {
   padding-top: 9rem;
   padding-bottom: 9rem;
+}
+
+.paddingBetweenCols td {
+  padding: 0 15px;
 }
