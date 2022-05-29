@@ -136,15 +136,26 @@
                       </p>
                       
                       <h5>1. Runs versus Balls Faced</h5>
-                      <p></p>
+                      <p>
+                        This relationship is very clearly linear, and makes sense. 
+                        The more balls a batsman faces, the more runs they will score, as the opportunity to score is increasing. 
+                      </p>
                       <iframe width="400" height="400"
                         src="{{ url_for('static', filename = 'html/runs_vs_ball.html') }}"></iframe>
 
                       <h5>2. Runs versus Average Strike Rate</h5>
+                      <p>
+                        This relationship is not as linear as the previous one, but again makes sense. 
+                        Strike rates tend to cluster around 130+, and maintaining above 180+ is very difficult for a long period of time.
+                      </p>
                       <iframe width="400" height="400"
                         src="{{ url_for('static', filename = 'html/runs_vs_sr.html') }}"></iframe>
 
                       <h5>3. Runs versus Average Sixes Hit</h5>
+                      <p>
+                        This relationship is more linear than the prior graph, but still holds interesting deviations. 
+                        Many of the highest run-scorers in the IPL are not particularly extraordinary six-hitters. 
+                      </p>
                       <iframe width="400" height="400"
                         src="{{ url_for('static', filename = 'html/runs_vs_six.html') }}"></iframe>
  
@@ -152,7 +163,7 @@
                       <h4> Correlation Table of Features</h4>
                       <p>
                         After exploring a few possible variables, I wanted to generate a correlative heatmap that showed how related different features were to the "runs" variable. I took the top five most related features, and generated the following heatmap. As we can see, the relations are not particularly strong with respect to our desired target variable, centering just above 20%.
-
+                        We do note the strength of "ball" (~ 76%) which reflects what we noticed in the first scatterplot – the higher the ball count, the higher the runs scored.
                         <br>
 
                         Of particular interest was the weak relation between a batsman's average runs and the runs they score against one bowler. We would expect this relationship to be much stronger, indicating that the sport's usage of the metric might be slightly overblown as a genuine indication of a player's quality.
