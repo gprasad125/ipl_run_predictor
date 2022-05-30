@@ -1,6 +1,6 @@
 **Project Files for Summer 2022 AI Camp Crash Course + Deployment**
 
-***Indian Premier League Batting Analysis**
+***Indian Premier League Batting Analysis***
 
 Data analysis, machine learning, and frontend deployment by Gokul Prasad
 Conducted as a preliminary crash course for [AI Camp](https://www.ai-camp.org/)
