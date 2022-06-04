@@ -2,7 +2,8 @@
 
 ***Indian Premier League Batting Analysis***
 
-Data analysis, machine learning, and frontend deployment by Gokul Prasad
+Data analysis, machine learning, and frontend deployment by Gokul Prasad.
+
 Conducted as a preliminary crash course for [AI Camp](https://www.ai-camp.org/)
 
 This project was conducted on [publicly available data containing](https://www.kaggle.com/datasets/rajsengo/indian-premier-league-ipl-all-seasons) statistics for the 2008-2021 IPL cricket seasons. 
